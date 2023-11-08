@@ -1,6 +1,7 @@
-<MDTitleBarButton@MDIconButton>
+<CustomMDTitleBarButton>
     draggable: False
     theme_text_color: 'Custom'
+    theme_icon_color: 'Custom'
     icon_size: sp(18)
     pos_hint: {'center_y': 0.5}
 
@@ -10,7 +11,8 @@
     size_hint : 1, None
     pos_hint: {'top': 1}
     height: dp(48)
-    md_bg_color: app.theme_cls.primary_color
+    md_bg_color: "#fffcf4"
+#    md_bg_color: app.theme_cls.primary_color
 
     MDBoxLayout:
         orientation: 'vertical'
@@ -47,17 +49,17 @@
                 markup: True
                 color: app.theme_cls.text_color if not root.title_color else root.title_color
 
-            MDTitleBarButton:
+            CustomMDTitleBarButton:
                 id: minimize
                 icon: 'window-minimize'
                 on_release: root.roll_up(self)
 
-            MDTitleBarButton:
+            CustomMDTitleBarButton:
                 id: restore
                 icon: 'window-restore'
                 on_release: root.restore(self)
 
-            MDTitleBarButton:
+            CustomMDTitleBarButton:
                 id: stop
                 icon: 'close-circle-outline'
                 on_release: app.stop(self)

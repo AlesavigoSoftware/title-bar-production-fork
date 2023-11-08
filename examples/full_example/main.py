@@ -1,12 +1,7 @@
 from kivymd.app import MDApp
 
 from kivy.lang.builder import Builder
-from kivy.factory import Factory
-
-Factory.register(
-    "MDTitleBar",
-    module="kivymd_extensions.title_bar.title_bar",
-)
+from kivymd_extensions.title_bar import MDTitleBar
 
 KV = """
 MDScreen:
